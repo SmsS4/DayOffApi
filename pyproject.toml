@@ -5,7 +5,7 @@ description = ""
 authors = ["SmsS4 <smss.lite@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.8.10,<3.10"
 jdatetime = "^4.1.0"
 requests = "^2.27.1"
 hijri-converter = "^2.2.3"
