@@ -1,6 +1,6 @@
-import requests
 import jdatetime
-from hijri_converter import Hijri, Gregorian
+import requests
+from hijri_converter import Gregorian
 
 HOST = "https://farsicalendar.com/api/"
 IS_THURSDAY_OFF = True
@@ -16,7 +16,9 @@ def is_off_api(date_type: str, month: int, day: int) -> bool:
 
 
 def is_day_off(month: int, day: int) -> bool:
-    shamsi = jdatetime.datetime(year=jdatetime.datetime.now().year, month=month, day=day)
+    shamsi = jdatetime.datetime(
+        year=jdatetime.datetime.now().year, month=month, day=day
+    )
     if IS_THURSDAY_OFF and shamsi.weekday() == 5:
         return True
     if shamsi.weekday() == 6:
