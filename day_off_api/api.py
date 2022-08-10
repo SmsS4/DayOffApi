@@ -8,6 +8,7 @@ IS_THURSDAY_OFF = True
 
 def is_off_api(date_type: str, month: int, day: int) -> bool:
     response = requests.get(f"{HOST}/{date_type}/{day}/{month}").json()
+    print(response)
     if len(response["values"]):
         for value in response["values"]:
             if value["dayoff"]:
